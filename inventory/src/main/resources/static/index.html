@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Inventory Management System</h1>
+        
+        <!-- Add Item Form -->
+        <div class="form-container">
+            <h2>Add New Item</h2>
+            <form id="itemForm">
+                <input type="hidden" id="itemId">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" required>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price:</label>
+                    <input type="number" id="price" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="minimumQuantity">Minimum Quantity:</label>
+                    <input type="number" id="minimumQuantity" required>
+                </div>
+                <div class="form-group">
+                    <label for="reorderQuantity">Reorder Quantity:</label>
+                    <input type="number" id="reorderQuantity" required>
+                </div>
+                <button type="submit">Add Item</button>
+                <button type="button" onclick="resetForm()">Clear Form</button>
+            </form>
+        </div>
+
+        <!-- Item List -->
+        <div class="list-container">
+            <h2>Inventory Items</h2>
+            <div class="table-responsive">
+                <table id="itemsTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Min Qty</th>
+                            <th>Reorder Qty</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="itemsList"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Popup Modal -->
+    <div id="editPopup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2>Edit Item</h2>
+            <form id="editForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
+
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" required>
+
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" required>
+
+                <label for="minQuantity">Minimum Quantity:</label>
+                <input type="number" id="minQuantity" name="minQuantity" required>
+
+                <label for="reorderQuantity">Reorder Quantity:</label>
+                <input type="number" id="reorderQuantity" name="reorderQuantity" required>
+
+                <button type="submit">Update Item</button>
+            </form>
+      </div>
+    </div>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
