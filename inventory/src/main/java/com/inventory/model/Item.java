@@ -14,8 +14,6 @@ import lombok.Setter;
 
 @Entity
 @Data
-@Getter
-@Setter
 @Table(name = "items")
 public class Item {
     @Id
